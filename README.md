@@ -1,1 +1,1 @@
-# Proyecto-Final-Aplicaciones-Distrubuidas
+Cabañas Rodríguez Dominic Gradmael, Juárez Anguiano Mario Alexis y Ramírez Orozco Juan Carlos no encargamos del punto 3 del proyecto.
