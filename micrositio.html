@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micrositio - Artesano</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="microsite-container">
+        <!-- HEADER DEL MICROSITIO -->
+        <header class="microsite-header">
+            <div class="container">
+                <a href="index.html" class="back-link">← Volver a México Profundo</a>
+                <div class="route-info">
+                    <span class="route-label">URL del Micrositio:</span>
+                    <code id="currentRoute" class="route-display"></code>
+                </div>
+            </div>
+        </header>
+
+        <!-- ========================================
+             PARTE A-C: PERFIL DEL ARTESANO
+             (Tu parte)
+             ======================================== -->
+        <section class="artesano-profile">
+            <div class="container">
+                <!-- LOGO -->
+                <div class="logo-container">
+                    <img id="artesanoLogo" src="" alt="Logo" class="artesano-logo">
+                </div>
+
+                <!-- NOMBRE DEL ARTESANO/COLECTIVO -->
+                <div class="artesano-info">
+                    <h1 id="artesanoNombre" class="artesano-nombre"></h1>
+                    <p id="artesanoTipo" class="artesano-tipo"></p>
+                    
+                    <!-- DESCRIPCIÓN -->
+                    <div class="descripcion-section">
+                        <h2>Sobre Nosotros</h2>
+                        <p id="artesanoDescripcion" class="descripcion"></p>
+                    </div>
+
+                    <!-- INFO ADICIONAL -->
+                    <div class="info-adicional">
+                        <div class="info-item">
+                            <strong>📍 Ubicación:</strong>
+                            <span id="artesanoUbicacion"></span>
+                        </div>
+                        <div class="info-item">
+                            <strong>🎨 Especialidad:</strong>
+                            <span id="artesanoEspecialidad"></span>
+                        </div>
+                        <div class="info-item">
+                            <strong>📅 Desde:</strong>
+                            <span id="artesanoAño"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             PARTE D: GALERÍA DE PRODUCTOS Y SERVICIOS
+             (Parte del compañero)
+             ======================================== -->
+        <section class="productos-section">
+            <div class="container">
+                <h2 class="section-title">🛍️ Productos y Servicios</h2>
+                <div id="productosGrid" class="productos-grid"></div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             PARTE E: INFORMACIÓN DE CONTACTO Y UBICACIÓN
+             (Parte del compañero)
+             ======================================== -->
+        <section class="contacto-section">
+            <div class="container">
+                <h2 class="section-title">📞 Contacto y Ubicación</h2>
+                <div class="contacto-grid">
+                    <!-- Información de contacto -->
+                    <div class="contacto-info">
+                        <h3>Contáctanos</h3>
+                        <div class="contacto-item">
+                            <span class="icon">📧</span>
+                            <div>
+                                <strong>Email:</strong>
+                                <p id="contactoEmail"></p>
+                            </div>
+                        </div>
+                        <div class="contacto-item">
+                            <span class="icon">📱</span>
+                            <div>
+                                <strong>Teléfono:</strong>
+                                <p id="contactoTelefono"></p>
+                            </div>
+                        </div>
+                        <div class="contacto-item">
+                            <span class="icon">💬</span>
+                            <div>
+                                <strong>WhatsApp:</strong>
+                                <p id="contactoWhatsapp"></p>
+                            </div>
+                        </div>
+                        <div class="redes-sociales">
+                            <h4>Síguenos en redes:</h4>
+                            <div id="redesSociales" class="redes-links"></div>
+                        </div>
+                    </div>
+
+                    <!-- Mapa/Ubicación -->
+                    <div class="ubicacion-info">
+                        <h3>Ubicación</h3>
+                        <div class="mapa-container">
+                            <div id="mapaPlaceholder" class="mapa-placeholder">
+                                <span class="icon-grande">📍</span>
+                                <p id="direccionCompleta"></p>
+                                <button onclick="abrirMapa()" class="btn-mapa">Ver en Google Maps</button>
+                            </div>
+                        </div>
+                        <div class="horarios">
+                            <h4>Horario de atención:</h4>
+                            <p id="horarioAtencion"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             PARTE F: TESTIMONIOS, RESEÑAS Y CALIFICACIONES
+             (Parte del compañero)
+             ======================================== -->
+        <section class="testimonios-section">
+            <div class="container">
+                <h2 class="section-title">⭐ Testimonios y Reseñas</h2>
+                
+                <!-- Calificación promedio -->
+                <div class="calificacion-promedio">
+                    <div class="rating-number" id="ratingNumber">4.8</div>
+                    <div class="stars" id="starsPromedio">★★★★★</div>
+                    <p class="total-reviews" id="totalReviews">48 reseñas</p>
+                </div>
+
+                <!-- Lista de testimonios -->
+                <div id="testimoniosList" class="testimonios-grid"></div>
+
+                <!-- Botón para dejar reseña -->
+                <div class="dejar-resena">
+                    <button onclick="mostrarFormularioResena()" class="btn-resena">Dejar una reseña</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="microsite-footer">
+            <div class="container">
+                <p>✅ Sistema completo implementado: Rutas dinámicas + Plantillas + Galería + Contacto + Testimonios</p>
+                <p>Micrositio generado automáticamente por México Profundo</p>
+                <p>Proyecto desarrollado para la materia - Todos los componentes funcionales</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Cargar datos del artesano al cargar la página
+        window.addEventListener('DOMContentLoaded', cargarDatosMicrositio);
+    </script>
+</body>
+</html>

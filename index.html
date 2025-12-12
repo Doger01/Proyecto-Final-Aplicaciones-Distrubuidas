@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>México Profundo - Plataforma de Artesanos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <h1>🇲🇽 México Profundo</h1>
+            <p>Conectando artesanos con el mundo</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="intro">
+            <h2>Micrositios de Artesanos</h2>
+            <p>Cada artesano tiene su propio espacio digital personalizado</p>
+        </section>
+
+        <section class="artesanos-grid">
+            <h3>Artesanos Registrados:</h3>
+            <div id="artesanosList" class="grid"></div>
+        </section>
+
+        <section class="demo-section">
+            <h3>🔧 Simulador de Rutas Dinámicas</h3>
+            <p>Ingresa el nombre del artesano para ver su micrositio:</p>
+            <div class="input-group">
+                <input type="text" id="artesanoInput" placeholder="Ej: nahuatzen, oaxaca-textiles, chiapas-ceramica">
+                <button onclick="irAMicrositio()">Ver Micrositio</button>
+            </div>
+            <p class="hint">💡 Prueba con: nahuatzen, oaxaca-textiles, chiapas-ceramica</p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
